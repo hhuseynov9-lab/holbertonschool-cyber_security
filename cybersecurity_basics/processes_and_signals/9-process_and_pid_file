@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# Creates a PID file and handles multiple signals
+# Creates a PID file and handles signals
 echo $$ > /tmp/myscript.pid
-trap "echo I hate the kill command; rm /tmp/myscript.pid; exit" SIGTERM
 trap "echo Y u no love me?!" SIGINT
+trap "echo I hate the kill command; rm /tmp/myscript.pid; exit" SIGTERM
 trap "rm /tmp/myscript.pid; exit" SIGQUIT
 while true
 do
