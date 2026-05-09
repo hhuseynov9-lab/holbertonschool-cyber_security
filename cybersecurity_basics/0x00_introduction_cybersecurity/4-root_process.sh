@@ -1,2 +1,2 @@
 #!/bin/bash
-pc -u "$1" -F | grep -v "	0	0"
+ps -F -u "$1" | grep -vE '0\s+0'
